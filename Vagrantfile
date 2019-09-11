@@ -23,9 +23,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "vlavad/Deepin"
-  config.vm.box_version = "15.10.1"
-
+  config.vm.box = "geerlingguy/ubuntu1804"
+  config.vbguest.installer_arguments = ['--nox11', '-- --do'] 
+  config.vm.provision "shell", path: "provision.sh"
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
